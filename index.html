@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Daily Habits Tracker</title>
+</head>
+<body>
+    <div id="entry-screen" class="entry-screen">
+        <div class="entry-quote">
+            <h1>Freedom requires discipline. Discipline gives us freedom. Freedom and greatness. Your destiny is there. Will you grab the reins?</h1>
+        </div>
+        <div class="entry-container">
+            <h1>Enter Password</h1>
+            <input type="password" id="entry-password" placeholder="Password">
+            <button id="entry-button">Enter</button>
+        </div>
+    </div>
+
+    <div class="topnav">
+        <div class="nav-links">
+            <a href="#" id="daily-tab">Daily</a>
+            <a href="#" id="habits-tab">Habits</a>
+            <a href="#" id="progress-tab">Progress</a>
+        </div>
+    </div>
+
+    <div id="input-section" class="container">
+        <h1>Add Your Habits</h1>
+        <input type="text" id="habit-input" placeholder="New habit">
+        <button id="add-habit">Add Habit</button>
+    </div>
+
+    <div id="habits-section" class="container" style="display: none;">
+        <h1>Today's Habits</h1>
+        <div id="date-time"></div>
+        <ul id="habits-list"></ul>
+    </div>
+
+    <div id="progress-container" class="progress-container" style="display: none;">
+        <div class="progress-header">
+            <button id="prev-month">&lt;</button>
+            <h1 id="month-year"></h1>
+            <button id="next-month">&gt;</button>
+        </div>
+        <div class="table-container">
+            <table id="progress-table"></table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

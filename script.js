@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Firebase Firestore reference
+    const db = firebase.firestore();
+
     const habitInput = document.getElementById('habit-input');
     const addHabitButton = document.getElementById('add-habit');
     const inputSection = document.getElementById('input-section');
@@ -42,22 +45,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function loadUserData(passkey) {
-        const storedData = localStorage.getItem(`habits_${passkey}`);
-        if (storedData) {
-            const data = JSON.parse(storedData);
-            habits = data.habits;
-            dailyHabitsStatus = data.dailyHabitsStatus;
-            renderHabits();
-            renderProgressTable();
-        }
+        db.collection('users').doc(passkey).get().then((doc) => {
+            if (doc.exists) {
+                const data = doc.data();
+                habits = data.habits;
+                dailyHabitsStatus = data.dailyHabitsStatus;
+                renderHabits();
+                renderProgressTable();
+            }
+        }).catch((error) => {
+            console.error("Error getting document:", error);
+        });
     }
 
     function saveUserData() {
-        const data = {
+        db.collection('users').doc(currentPasskey).set({
             habits: habits,
             dailyHabitsStatus: dailyHabitsStatus
-        };
-        localStorage.setItem(`habits_${currentPasskey}`, JSON.stringify(data));
+        }).catch((error) => {
+            console.error("Error writing document: ", error);
+        });
     }
 
     function updateDateTime() {

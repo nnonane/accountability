@@ -8,19 +8,27 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
     <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyAGmM3pFQYYgp0vn7z8UpdWeeZRcFJZeyM",
+        // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAGmM3pFQYYgp0vn7z8UpdWeeZRcFJZeyM",
   authDomain: "accountability-af2bb.firebaseapp.com",
   projectId: "accountability-af2bb",
   storageBucket: "accountability-af2bb.appspot.com",
   messagingSenderId: "873205100013",
   appId: "1:873205100013:web:6aeb7618c8d97cffac8be4",
   measurementId: "G-KX6BPN2ZBT"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore();
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
     </script>
 </head>
 <body>

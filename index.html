@@ -1,77 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Daily Habits Tracker</title>
-      <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyAGmM3pFQYYgp0vn7z8UpdWeeZRcFJZeyM",
-    authDomain: "accountability-af2bb.firebaseapp.com",
-    projectId: "accountability-af2bb",
-    storageBucket: "accountability-af2bb.appspot.com",
-    messagingSenderId: "873205100013",
-    appId: "1:873205100013:web:6aeb7618c8d97cffac8be4",
-    measurementId: "G-KX6BPN2ZBT"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseSight | Research-Backed Analytics for Influencers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="entry-screen" class="entry-screen">
-        <div class="entry-quote">
-            <h1>Freedom requires discipline. Discipline gives us freedom. Freedom and greatness. Your destiny is there. Will you grab the reins?</h1>
-        </div>
-        <div class="entry-container">
-            <h1>Enter Password</h1>
-            <input type="password" id="entry-password" placeholder="Password">
-            <button id="entry-button">Enter</button>
-        </div>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <div class="logo">PulseSight</div>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#insights">Insight Studio</a>
+        <a href="#playbook">Playbook</a>
+        <a href="#integrations">Integrations</a>
+        <a href="#support">Support</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn ghost">Log in</button>
+        <button class="btn primary">Get Started Free</button>
+      </div>
     </div>
+  </header>
 
-    <div class="topnav">
-        <div class="nav-links">
-            <a href="#" id="daily-tab">Daily</a>
-            <a href="#" id="habits-tab">Habits</a>
-            <a href="#" id="progress-tab">Progress</a>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Audience Intelligence for Creators</p>
+          <h1>Research-backed analytics that grow influencer income.</h1>
+          <p class="lede">PulseSight translates channel behavior into clear next steps—no spreadsheets or guesswork. Unlock smarter partnerships, launch profitable drops, and build reliable recurring revenue.</p>
+          <div class="cta-group">
+            <button class="btn primary">Start Free</button>
+            <button class="btn ghost">Book a Demo</button>
+          </div>
+          <div class="trust-grid">
+            <div class="pill inline">SOC 2 ready</div>
+            <div class="pill inline">99.98% uptime</div>
+            <div class="pill inline">Human research review</div>
+          </div>
+          <div class="trusted-by">
+            <p>Trusted by teams at</p>
+            <div class="logo-row">
+              <span>Notion</span><span>Figma</span><span>Wise</span><span>Canva</span><span>Yelp</span>
+            </div>
+          </div>
         </div>
-    </div>
-
-    <div id="input-section" class="container">
-        <h1>Add Your Habits</h1>
-        <input type="text" id="habit-input" placeholder="New habit">
-        <button id="add-habit">Add Habit</button>
-    </div>
-
-    <div id="habits-section" class="container" style="display: none;">
-        <h1>Today's Habits</h1>
-        <div id="date-time"></div>
-        <ul id="habits-list"></ul>
-    </div>
-
-    <div id="progress-container" class="progress-container" style="display: none;">
-        <div class="progress-header">
-            <button id="prev-month">&lt;</button>
-            <h1 id="month-year"></h1>
-            <button id="next-month">&gt;</button>
+        <div class="hero-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-title">Creator Operating Board</p>
+              <p class="panel-sub">Weekly revenue & audience momentum</p>
+            </div>
+            <span class="pill">Live</span>
+          </div>
+          <div class="panel-body">
+            <div class="chart-row">
+              <div class="card metric">
+                <p class="label">MRR Velocity</p>
+                <h3>$38,420</h3>
+                <p class="muted">+12.4% MoM</p>
+              </div>
+              <div class="card metric">
+                <p class="label">Community Growth</p>
+                <h3>+6,891</h3>
+                <p class="muted">Net new members</p>
+              </div>
+            </div>
+            <div class="card chart">
+              <div class="chart-label">Revenue from Partnerships</div>
+              <div class="chart-bars">
+                <div class="bar" style="height: 60%"></div>
+                <div class="bar" style="height: 80%"></div>
+                <div class="bar" style="height: 50%"></div>
+                <div class="bar" style="height: 90%"></div>
+                <div class="bar" style="height: 70%"></div>
+              </div>
+              <div class="chart-legend">
+                <span><span class="dot"></span>Brands</span>
+                <span><span class="dot secondary"></span>Affiliates</span>
+              </div>
+            </div>
+            <div class="card insights">
+              <div class="insight-row">
+                <div>
+                  <p class="label">Content Experiments</p>
+                  <p class="muted">Variation B outperforming by 18%</p>
+                </div>
+                <span class="pill">On track</span>
+              </div>
+              <div class="insight-row">
+                <div>
+                  <p class="label">Retention Watchlist</p>
+                  <p class="muted">Short-form audience churn up 6%</p>
+                </div>
+                <button class="text-link">See details</button>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <div>
+              <p class="label">Confidence model</p>
+              <p class="muted">Verified by research council & anomaly checks</p>
+            </div>
+            <span class="pill">ISO 27001</span>
+          </div>
         </div>
-        <div class="table-container">
-            <table id="progress-table"></table>
-        </div>
-    </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section class="section muted-bg" id="research">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">Research Framework</p>
+          <h2>Proven methods, codified for creator businesses.</h2>
+          <p class="body">Every dashboard is built from peer-reviewed behavioral research and market data. We blend cohort analysis, attribution science, and experimentation playbooks so you can focus on creating while we handle the math.</p>
+          <div class="grid stats">
+            <div class="card stat">
+              <h3>45M+</h3>
+              <p class="muted">Audience events processed monthly.</p>
+            </div>
+            <div class="card stat">
+              <h3>72%</h3>
+              <p class="muted">Average lift in sponsorship close rates.</p>
+            </div>
+            <div class="card stat">
+              <h3>3x</h3>
+              <p class="muted">Faster path to repeat revenue.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card methodology">
+          <h3>How we validate insights</h3>
+          <ol>
+            <li><strong>Signal capture:</strong> ingest platform metrics, audience surveys, and sales outcomes.</li>
+            <li><strong>Hypothesis engine:</strong> statistical lifts, correlation checks, and survivorship controls.</li>
+            <li><strong>Action scoring:</strong> prioritize plays by impact, confidence, and effort.</li>
+            <li><strong>Feedback loop:</strong> automations adjust campaigns as the data shifts.</li>
+          </ol>
+          <div class="progress-wrap">
+            <div class="progress-label">
+              <span>Validation pipeline</span>
+              <span>92% confidence</span>
+            </div>
+            <div class="progress-bar">
+              <span style="width: 92%"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="insights" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Insight Studio</p>
+            <h2>Dashboards that translate directly to revenue.</h2>
+            <p class="body">No more guesswork. Compare channels, identify high-intent cohorts, and ship experiments that move the needle.</p>
+          </div>
+          <div class="pill-group">
+            <span class="pill">Revenue</span>
+            <span class="pill">Audience</span>
+            <span class="pill">Experiments</span>
+          </div>
+        </div>
+        <div class="grid feature-grid">
+          <div class="card feature">
+            <div class="feature-icon">📊</div>
+            <h3>Creator KPIs</h3>
+            <p class="muted">Benchmark monetization per platform, track ROAS, and spot underperforming content in seconds.</p>
+          </div>
+          <div class="card feature">
+            <div class="feature-icon">🧭</div>
+            <h3>Opportunity Maps</h3>
+            <p class="muted">Heatmaps highlight the partnerships, drops, and membership tiers that will net the biggest lift next.</p>
+          </div>
+          <div class="card feature">
+            <div class="feature-icon">⚡</div>
+            <h3>Automated Alerts</h3>
+            <p class="muted">Get notified when LTV, churn, or click-depth crosses thresholds—no daily digging required.</p>
+          </div>
+          <div class="card feature">
+            <div class="feature-icon">🛰️</div>
+            <h3>Forecast Studio</h3>
+            <p class="muted">Run scenarios by tweaking CPM, drop cadence, or partner mix and see revenue impact instantly.</p>
+          </div>
+        </div>
+        <div class="grid data-grid">
+          <div class="card data-card">
+            <div class="data-header">
+              <span class="pill">Momentum</span>
+              <span class="muted">Last 30 days</span>
+            </div>
+            <h3>$142,800</h3>
+            <p class="muted">Attributed creator revenue across channels</p>
+            <div class="stacked-bars">
+              <span style="width: 40%"></span>
+              <span style="width: 25%"></span>
+              <span style="width: 35%"></span>
+            </div>
+            <div class="stacked-legend">
+              <span><span class="dot"></span>Partnerships</span>
+              <span><span class="dot secondary"></span>Merch</span>
+              <span><span class="dot tertiary"></span>Memberships</span>
+            </div>
+          </div>
+          <div class="card data-card">
+            <div class="data-header">
+              <span class="pill">Research-backed</span>
+              <span class="muted">Cohort depth</span>
+            </div>
+            <ul class="signal-list">
+              <li>
+                <div>
+                  <p class="label">Premium cohort</p>
+                  <p class="muted">+31% LTV after creator-led onboarding</p>
+                </div>
+                <span class="badge positive">+8.2%</span>
+              </li>
+              <li>
+                <div>
+                  <p class="label">Short-form fans</p>
+                  <p class="muted">Improve conversion with mid-funnel CTAs</p>
+                </div>
+                <span class="badge neutral">Stable</span>
+              </li>
+              <li>
+                <div>
+                  <p class="label">Podcast audience</p>
+                  <p class="muted">Best-performing bundle: weekly Q&A + merch</p>
+                </div>
+                <span class="badge positive">+4.5%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="playbook" class="section muted-bg">
+      <div class="container two-col">
+        <div class="card playbook">
+          <div class="playbook-header">
+            <div>
+              <p class="eyebrow">Execution Layer</p>
+              <h3>Creator Revenue Playbook</h3>
+            </div>
+            <button class="btn ghost">Download PDF</button>
+          </div>
+          <ul class="playbook-list">
+            <li>
+              <span class="pill">Partnerships</span>
+              <div>
+                <h4>Close faster with calibrated reach & fit scores.</h4>
+                <p class="muted">Auto-generated media kits and ROI models that answer brand questions before they ask.</p>
+              </div>
+            </li>
+            <li>
+              <span class="pill">Merch</span>
+              <div>
+                <h4>Test drops with risk-aware forecasts.</h4>
+                <p class="muted">Blend pre-order intent with historical conversion to plan profitable launches.</p>
+              </div>
+            </li>
+            <li>
+              <span class="pill">Memberships</span>
+              <div>
+                <h4>Reduce churn with predictive nudges.</h4>
+                <p class="muted">Lifecycle cues trigger perks, AMAs, or bonus content at the right moment.</p>
+              </div>
+            </li>
+            <li>
+              <span class="pill">Advisory</span>
+              <div>
+                <h4>Ship with a research partner on call.</h4>
+                <p class="muted">Partner with our analysts for quarterly planning, instrumentation, and experimentation.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="card stories" id="support">
+          <p class="eyebrow">What teams are saying</p>
+          <div class="story">
+            <p class="quote">“PulseSight is the first analytics tool that recommends actions we can actually ship. Our sponsorship close rate doubled in one quarter.”</p>
+            <p class="author">Jasmin Lee — Head of Partnerships, CreatorLab</p>
+          </div>
+          <div class="story">
+            <p class="quote">“The research layer keeps us honest. We know which experiments are statistically worth it before we hit publish.”</p>
+            <p class="author">Andre Silva — Growth Lead, StudioNorth</p>
+          </div>
+          <div class="story highlight">
+            <div class="story-top">
+              <p class="pill">New</p>
+              <p class="muted">Week-over-week lift</p>
+            </div>
+            <h3>+24.7% revenue</h3>
+            <p class="muted">after rolling out sponsorship sequencing and merch bundles.</p>
+          </div>
+          <button class="btn primary">Talk with a strategist</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="integrations">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Integrations</p>
+            <h2>Connect your stack in minutes.</h2>
+            <p class="body">Native connectors and streaming ingestion keep your insights fresh without ETL headaches.</p>
+          </div>
+          <div class="pill-group">
+            <span class="pill">Auto-sync</span>
+            <span class="pill">Secure</span>
+            <span class="pill">No code</span>
+          </div>
+        </div>
+        <div class="integration-grid">
+          <div class="integration-card">
+            <h4>Social & Content</h4>
+            <p class="muted">YouTube • TikTok • Instagram • Twitch • X</p>
+          </div>
+          <div class="integration-card">
+            <h4>Commerce</h4>
+            <p class="muted">Shopify • Stripe • Memberful • LemonSqueezy</p>
+          </div>
+          <div class="integration-card">
+            <h4>Ads & Analytics</h4>
+            <p class="muted">Meta Ads • Google Ads • GA4 • Looker Studio</p>
+          </div>
+          <div class="integration-card">
+            <h4>Collaboration</h4>
+            <p class="muted">Notion • Slack • Airtable • Linear</p>
+          </div>
+        </div>
+        <div class="badge-row">
+          <span class="badge">SSO / SAML</span>
+          <span class="badge">Row-level security</span>
+          <span class="badge">PII safeguards</span>
+          <span class="badge">Audit trail</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-grid">
+        <div>
+          <p class="eyebrow">Ready to move?</p>
+          <h2>Launch insights in days, not months.</h2>
+          <p class="body">Start with a free workspace, connect your channels, and see which levers will increase revenue this week.</p>
+        </div>
+        <div class="cta-actions">
+          <button class="btn primary">Create Workspace</button>
+          <button class="btn ghost">Schedule a walkthrough</button>
+          <p class="muted">No credit card required • Cancel anytime</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo">PulseSight</div>
+        <p class="muted">Research-backed analytics to help influencers build resilient income.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#research">Research</a>
+        <a href="#insights">Insights</a>
+        <a href="#playbook">Playbook</a>
+        <a href="#support">Support</a>
+      </div>
+      <div class="footer-meta">© <span id="year"></span> PulseSight. Built for modern creators.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

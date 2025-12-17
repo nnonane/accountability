@@ -1,0 +1,11 @@
+{
+  "name": "pulsesight-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Research-backed analytics landing page for influencer revenue",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}
